@@ -1,3 +1,2 @@
-Kak ustroena avtomatizacia prodazh v JBTools.
-Stranica-podarok zritelyam podkasta "Gran".
-Otkryt: https://kuhnikov-jbt.github.io/avtomatizacia/
+Stranica pro avtomatizaciyu prodazh JBTools - podarok zritelyam podkasta "Gran".
+Otkryt: https://kuhnikov-jbt.github.io/avtomatizacia-podcast/
