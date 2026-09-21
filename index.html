@@ -47,6 +47,8 @@ header{padding:34px 0 0}
 .btn--light:hover{background:rgba(255,255,255,.1)}
 @media(max-width:560px){.btn--light{margin:12px 0 0; display:block; text-align:center}}
 .btn--ghost:hover{background:rgba(176,56,44,.07)}
+.hero-btns{margin:0; display:flex; gap:12px; flex-wrap:wrap}
+@media(max-width:560px){.hero-btns .btn{flex:1 1 100%; text-align:center}}
 
 section{padding:46px 0; border-bottom:1px solid var(--line)}
 section:last-of-type{border-bottom:0}
@@ -135,7 +137,8 @@ footer{padding:46px 0 60px; color:var(--grey); font-size:15px}
       <div class="fact"><b>73</b><span>поставщика</span></div>
       <div class="fact"><b>501 333</b><span>позиции в базе</span></div>
     </div>
-    <a class="btn" href="#offer">Кому это может пригодиться</a>
+    <p class="hero-btns"><a class="btn" href="https://t.me/alexkukhnikovbot">Записаться на экскурсию</a>
+    <a class="btn btn--ghost" href="#offer">Кому это может пригодиться</a></p>
   </div>
 </div>
 
