@@ -138,10 +138,8 @@ section, .hero{scroll-margin-top:24px}
 .facts.facts--4{grid-template-columns:repeat(4,1fr)}
 @media(max-width:760px){ .pings{grid-template-columns:1fr} .facts.facts--4{grid-template-columns:repeat(2,1fr)} }
 .facts.facts--3{grid-template-columns:repeat(3,1fr)}
-.facts--3 .fact{background:var(--red); border-color:var(--red); padding:20px 18px}
-.facts--3 .fact b{color:#fff; font-size:clamp(26px,4vw,38px)}
-.facts--3 .fact span{color:rgba(255,255,255,.88); font-size:15px}
-@media(max-width:760px){ .facts.facts--3{grid-template-columns:1fr} }
+@media(max-width:760px){ .facts.facts--3{grid-template-columns:repeat(2,1fr)} }
+.fact{display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center}
 </style>
 </head>
 <body>
@@ -149,6 +147,7 @@ section, .hero{scroll-margin-top:24px}
 <nav class="chapters" aria-label="Главы">
   <a href="#top"><small>Начало</small>О компании</a>
   <a href="#shops"><small>Вживую</small>Наши магазины</a>
+  <a href="#ai"><small>Команда</small>ИИ-агенты</a>
   <a href="#money"><small>Деньги</small>Что это дало</a>
   <a href="#offer"><small>Участникам</small>Кому подойдёт</a>
   <a href="#sales"><small>01</small>Продажи</a>
@@ -177,7 +176,7 @@ section, .hero{scroll-margin-top:24px}
       <div class="fact"><b>74</b><span>наших сайта</span></div>
       <div class="fact"><b>73</b><span>поставщика</span></div>
       <div class="fact"><b>501 333</b><span>позиции в базе</span></div>
-      <div class="fact"><b>≈2 000</b><span>обращений в месяц: ≈1 600 заявок почтой и с сайтов, ≈400 звонков</span></div>
+      <div class="fact"><b>≈2 000</b><span>обращений в месяц, из них ≈400 звонков</span></div>
     </div>
     <p class="hero-btns"><a class="btn" href="#offer">Кому это может пригодиться</a></p>
   </div>
@@ -224,6 +223,24 @@ section, .hero{scroll-margin-top:24px}
           <img src="../img/sites/denzel-shop.ru.webp" alt="Главная страница denzel-shop.ru" loading="lazy"></div><div class="device__stand"></div></div>
         <b>denzel-shop.ru</b><span>Техника и инструмент DENZEL</span>
       </a>
+    </div>
+  </div>
+</section>
+
+<section id="ai">
+  <div class="wrap">
+    <p class="eyebrow">ИИ-команда</p>
+    <h2>Рядом с двенадцатью людьми работают ИИ-агенты</h2>
+    <p>Рутину в компании делают не люди. Агенты читают письма клиентов и поставщиков, подбирают товар,
+    разбирают звонки, проверяют файлы и пишут отчёты. Часть из них учится на своих ошибках: смотрит,
+    где ошиблась, и предлагает себе правку.</p>
+    <div class="facts facts--3">
+      <div class="fact"><b>4</b><span>самообучающихся агента: по будням разбирают свои ошибки и жалобы менеджеров</span></div>
+      <div class="fact"><b>16</b><span>ИИ-агентов в работе: заявки, подбор товара, звонки, ответы поставщиков</span></div>
+      <div class="fact"><b>≈400</b><span>автоматических заданий по расписанию: цены, остатки, сайты, проверки</span></div>
+      <div class="fact"><b>≈200</b><span>писем в день читает и разбирает ИИ</span></div>
+      <div class="fact"><b>≈600</b><span>обращений к нейросети в день</span></div>
+      <div class="fact"><b>≈55</b><span>регулярных отчётов, сводок и сторожей</span></div>
     </div>
   </div>
 </section>
