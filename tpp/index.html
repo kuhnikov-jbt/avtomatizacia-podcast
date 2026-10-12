@@ -126,6 +126,22 @@ footer{padding:46px 0 60px; color:var(--grey); font-size:15px}
 section, .hero{scroll-margin-top:24px}
 @media(min-width:1200px){ .chapters{display:flex} body{padding-left:236px} }
 @media(min-width:1600px){ body{padding-left:0} .wrap{max-width:1040px} body{font-size:19px} .lead{max-width:48em} }
+.pings{display:grid; grid-template-columns:repeat(2,1fr); gap:16px; margin:26px 0 8px}
+.ping{background:var(--white); border:1px solid var(--line); border-left:4px solid #2f80ed; border-radius:12px; padding:14px 16px; font-size:15px; line-height:1.45}
+.ping__head{display:flex; justify-content:space-between; gap:10px; font-size:13px; color:var(--grey); margin-bottom:8px}
+.ping__bot{font-weight:700; color:#1b1a18}
+.ping p{margin:0}
+.ping__btns{display:flex; flex-wrap:wrap; gap:8px; margin-top:12px}
+.ping__btns span{border:1px solid #2f80ed; color:#2f80ed; border-radius:8px; padding:5px 10px; font-size:13px; font-weight:600}
+.hide{filter:blur(5px); user-select:none}
+.pings__note{font-size:14px; color:var(--grey); margin:4px 0 0}
+.facts.facts--4{grid-template-columns:repeat(4,1fr)}
+@media(max-width:760px){ .pings{grid-template-columns:1fr} .facts.facts--4{grid-template-columns:repeat(2,1fr)} }
+.facts.facts--3{grid-template-columns:repeat(3,1fr)}
+.facts--3 .fact{background:var(--red); border-color:var(--red); padding:20px 18px}
+.facts--3 .fact b{color:#fff; font-size:clamp(26px,4vw,38px)}
+.facts--3 .fact span{color:rgba(255,255,255,.88); font-size:15px}
+@media(max-width:760px){ .facts.facts--3{grid-template-columns:1fr} }
 </style>
 </head>
 <body>
@@ -386,6 +402,45 @@ section, .hero{scroll-margin-top:24px}
       <figcaption>Состояние базы по брендам: сколько позиций, у скольких есть цена и насколько она свежая.
       Красным помечено то, чему доверять нельзя.</figcaption>
     </figure>
+    <p><b>Ответы поставщиков разбирает робот.</b> Каждый запрос поставщику уходит с номером заказа в теме
+    письма, например «Запрос ДБУТ-006268 ЗУБР». Поставщики отвечают в общий ящик снабжения. Система находит
+    номер в теме, в тексте, во вложении или по цепочке переписки и по нему понимает, чья это сделка и какой
+    менеджер её ведёт.</p>
+    <figure class="shot">
+      <div class="device"><div class="device__screen"><div class="device__bar"><i></i><i></i><i></i></div>
+        <img src="../img/snab-mail.webp" width="1307" height="884" alt="Ящик снабжения в Битрикс24: в каждой теме письма номер заказа ДБУТ" loading="lazy"></div><div class="device__stand"></div></div>
+      <figcaption>Ящик снабжения в Битрикс24, снято 12 октября 2026. Отправители скрыты. В каждой теме
+      стоит номер заказа: по нему ответ сам находит свою сделку и своего менеджера.</figcaption>
+    </figure>
+    <p>В момент ответа менеджер получает уведомление от бота в CRM. Нейросеть читает письмо вместе
+    с вложением и пишет суть одной строкой: есть ли товар, цена, срок, приложен ли счёт. Под уведомлением
+    две кнопки: открыть сделку и открыть письмо. Канал подключается любой: CRM, мессенджер, почта.
+    Пустые «спасибо, получили» менеджера не дёргают.</p>
+    <div class="pings">
+      <div class="ping">
+        <div class="ping__head"><span class="ping__bot">JBT-Ассистент</span><span>сообщение менеджеру</span></div>
+        <p>📩 Ответ поставщика · ДБУТ-006253 (BESSEY)<br>
+        <b><span class="hide">Поставщик инструмента</span></b>: прайс_N_позиций<br>
+        Счет на 2 позиции BESSEY на сумму <span class="hide">00 000.00</span> руб.; GH100 поставка 23.02.2027, GH50 без срока.<br>
+        📎 приложен файл (Счет на оплату № <span class="hide">00000</span> от 12.10.2026.xlsx) · ответили 1 по заявке</p>
+        <div class="ping__btns"><span>🔎 Открыть сделку</span><span>📬 Открыть почту</span></div>
+      </div>
+      <div class="ping">
+        <div class="ping__head"><span class="ping__bot">JBT-Ассистент</span><span>сообщение менеджеру</span></div>
+        <p>📩 Ответ поставщика · ДБУТ-006235 (HAZET)<br>
+        <b><span class="hide">Поставщик</span></b>: отказ<br>
+        Электронный тестер HAZET 7901E не поставят из-за отсутствия деклараций соответствия.<br>
+        📎 без вложений · ответили 1 по заявке</p>
+        <div class="ping__btns"><span>🔎 Открыть сделку</span><span>📬 Открыть почту</span></div>
+      </div>
+    </div>
+    <p class="pings__note">Текст двух настоящих уведомлений от 12 октября 2026. Название поставщика, сумма и номер счёта скрыты.</p>
+    <div class="facts facts--4">
+      <div class="fact"><b>1 117</b><span>ответов поставщиков за 30 дней</span></div>
+      <div class="fact"><b>864</b><span>из них с номером заказа</span></div>
+      <div class="fact"><b>741</b><span>сами привязались к сделке</span></div>
+      <div class="fact"><b>442</b><span>уведомления менеджерам по делу, без пустых писем</span></div>
+    </div>
   </div>
 </section>
 
@@ -431,8 +486,21 @@ section, .hero{scroll-margin-top:24px}
     <h2>Характеристики товаров собираются сами</h2>
     <p>Карточка товара без характеристик не продаёт и не находится в поиске. Заполнять их руками на сотнях
     тысяч позиций невозможно, поэтому они собираются машиной: с наших же витрин, из фидов поставщиков
-    и из архивов разбора каталогов производителей. Сейчас в базе 1 537 550 фактов о товарах на 108 068
-    позициях, и у каждого факта записано, откуда он взят и насколько ему можно верить.</p>
+    и из архивов разбора каталогов производителей. У каждого факта записано, откуда он взят и насколько
+    ему можно верить.</p>
+    <div class="facts facts--3">
+      <div class="fact"><b>1 538 549</b><span>фактов о товарах в базе</span></div>
+      <div class="fact"><b>108 389</b><span>позиций, по которым они собраны</span></div>
+      <div class="fact"><b>79</b><span>источников: наши витрины, фиды поставщиков, каталоги производителей</span></div>
+    </div>
+    <figure class="shot">
+      <div class="device"><div class="device__screen"><div class="device__bar"><i></i><i></i><i></i></div>
+        <img src="../img/kvt-card.webp" width="1400" height="1521" alt="Карточка гидравлического пресса КВТ ПГР-120 с отмеченными блоками наполнения" loading="lazy"></div><div class="device__stand"></div></div>
+      <figcaption>Карточка гидравлического пресса на нашем сайте КВТ. Рамками отмечено, что мы заполняем
+      на каждой карточке: фото, цена и наличие, свойства, описание и комплект, запчасти и паспорт,
+      характеристики, товары серии, вопросы и ответы, упаковка и логистика для расчёта доставки.
+      Карточка целиком: <a href="https://kvt-shop.ru/product/press-gidravlicheskij-ruchnoj-pgr-120-kvt-53052/">kvt-shop.ru, пресс ПГР-120</a>.</figcaption>
+    </figure>
   </div>
 </section>
 
