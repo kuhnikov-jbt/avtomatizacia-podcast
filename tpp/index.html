@@ -116,16 +116,41 @@ footer{padding:46px 0 60px; color:var(--grey); font-size:15px}
   .shops{grid-template-columns:1fr}
   .device__screen{padding:6px 6px 8px}
 }
+
+/* Панель глав слева: для показа с ноутбука на телевизоре (12.10.2026) */
+.chapters{position:fixed; left:18px; top:50%; transform:translateY(-50%); display:none; flex-direction:column; gap:4px; width:206px; z-index:10}
+.chapters a{font-size:14px; line-height:1.25; color:#4a4842; text-decoration:none; padding:7px 11px; border-radius:8px; border:1px solid transparent}
+.chapters a:hover{background:var(--white); border-color:var(--line)}
+.chapters a.is-active{background:#1b1a18; color:#fff; border-color:#1b1a18}
+.chapters a small{display:block; font-size:11px; letter-spacing:.08em; text-transform:uppercase; opacity:.6}
+section, .hero{scroll-margin-top:24px}
+@media(min-width:1200px){ .chapters{display:flex} body{padding-left:236px} }
+@media(min-width:1600px){ body{padding-left:0} .wrap{max-width:1040px} body{font-size:19px} .lead{max-width:48em} }
 </style>
 </head>
 <body>
 
+<nav class="chapters" aria-label="Главы">
+  <a href="#top"><small>Начало</small>О компании</a>
+  <a href="#shops"><small>Вживую</small>Наши магазины</a>
+  <a href="#money"><small>Деньги</small>Что это дало</a>
+  <a href="#offer"><small>Участникам</small>Кому подойдёт</a>
+  <a href="#sales"><small>01</small>Продажи</a>
+  <a href="#suppliers"><small>02</small>Поставщики</a>
+  <a href="#sites"><small>03</small>Сайты</a>
+  <a href="#marketing"><small>04</small>Маркетинг и аналитика</a>
+  <a href="#content"><small>05</small>Наполнение сайтов</a>
+  <a href="#management"><small>06</small>Управление</a>
+  <a href="#honest"><small>Честно</small>Где машина ошибается</a>
+  <a href="#how"><small>Как собрано</small>В диалоге с ИИ</a>
+  <a href="#tour"><small>Финал</small>Экскурсия</a>
+</nav>
 <header>
   <div class="wrap"><p class="eyebrow">Торгово-промышленная палата Ленинского округа · материалы к выступлению</p></div>
 </header>
 
 <div class="wrap">
-  <div class="hero">
+  <div class="hero" id="top">
     <h1>Письмо клиента превращается в заявку с ценами. Без менеджера.</h1>
     <p class="lead">Мы продаём промышленный инструмент заводам и монтажникам. Нас в компании 12 человек.
     Заявки приходят почтой, и раньше их разбирал отдельный сотрудник: прочитать письмо, найти каждую позицию
@@ -136,13 +161,13 @@ footer{padding:46px 0 60px; color:var(--grey); font-size:15px}
       <div class="fact"><b>74</b><span>наших сайта</span></div>
       <div class="fact"><b>73</b><span>поставщика</span></div>
       <div class="fact"><b>501 333</b><span>позиции в базе</span></div>
-      <div class="fact"><b>≈2 000</b><span>заявок в месяц</span></div>
+      <div class="fact"><b>≈2 000</b><span>обращений в месяц: ≈1 600 заявок почтой и с сайтов, ≈400 звонков</span></div>
     </div>
     <p class="hero-btns"><a class="btn" href="#offer">Кому это может пригодиться</a></p>
   </div>
 </div>
 
-<section>
+<section id="shops">
   <div class="wrap">
     <p class="eyebrow">Посмотреть вживую</p>
     <h2>Наши магазины</h2>
@@ -187,7 +212,7 @@ footer{padding:46px 0 60px; color:var(--grey); font-size:15px}
   </div>
 </section>
 
-<section>
+<section id="money">
   <div class="wrap">
     <p class="eyebrow">Что это дало в деньгах</p>
     <h2>Должность, которой больше нет</h2>
@@ -284,7 +309,7 @@ footer{padding:46px 0 60px; color:var(--grey); font-size:15px}
   </div>
 </section>
 
-<section>
+<section id="sales">
   <div class="wrap">
     <p class="eyebrow">01 · Продажи</p>
     <h2>Письмо становится заявкой, счёт уходит сам</h2>
@@ -337,7 +362,7 @@ footer{padding:46px 0 60px; color:var(--grey); font-size:15px}
   </div>
 </section>
 
-<section>
+<section id="suppliers">
   <div class="wrap">
     <p class="eyebrow">02 · Поставщики</p>
     <h2>Прайсы 73 поставщиков превращаются в цены сами</h2>
@@ -364,7 +389,7 @@ footer{padding:46px 0 60px; color:var(--grey); font-size:15px}
   </div>
 </section>
 
-<section>
+<section id="sites">
   <div class="wrap">
     <p class="eyebrow">03 · Сайты</p>
     <h2>74 интернет-магазина как одно хозяйство</h2>
@@ -383,7 +408,7 @@ footer{padding:46px 0 60px; color:var(--grey); font-size:15px}
   </div>
 </section>
 
-<section>
+<section id="marketing">
   <div class="wrap">
     <p class="eyebrow">04 · Маркетинг и аналитика</p>
     <h2>Видно, трафик упал из-за нас или из-за поисковика</h2>
@@ -400,7 +425,7 @@ footer{padding:46px 0 60px; color:var(--grey); font-size:15px}
   </div>
 </section>
 
-<section>
+<section id="content">
   <div class="wrap">
     <p class="eyebrow">05 · Наполнение сайтов</p>
     <h2>Характеристики товаров собираются сами</h2>
@@ -411,7 +436,7 @@ footer{padding:46px 0 60px; color:var(--grey); font-size:15px}
   </div>
 </section>
 
-<section>
+<section id="management">
   <div class="wrap">
     <p class="eyebrow">06 · Управление</p>
     <h2>Задача ставится голосом, а не кликами в кабинетах</h2>
@@ -426,7 +451,7 @@ footer{padding:46px 0 60px; color:var(--grey); font-size:15px}
   </div>
 </section>
 
-<section>
+<section id="honest">
   <div class="wrap mistakes">
     <p class="eyebrow">Честно</p>
     <h2>Где машина ошибается</h2>
@@ -451,7 +476,7 @@ footer{padding:46px 0 60px; color:var(--grey); font-size:15px}
   </div>
 </section>
 
-<section>
+<section id="how">
   <div class="wrap">
     <p class="eyebrow">Как это собрано</p>
     <h2>Собрал сам, в диалоге с ИИ</h2>
@@ -464,7 +489,7 @@ footer{padding:46px 0 60px; color:var(--grey); font-size:15px}
   </div>
 </section>
 
-<section>
+<section id="tour">
   <div class="wrap">
     <div class="offer">
       <span class="tag">Экскурсия</span>
@@ -497,5 +522,20 @@ footer{padding:46px 0 60px; color:var(--grey); font-size:15px}
   </div>
 </footer>
 
+<script>
+// Подсветка текущей главы в панели слева
+(function(){
+  var links=[].slice.call(document.querySelectorAll('.chapters a'));
+  var map={}; links.forEach(function(a){ var el=document.querySelector(a.getAttribute('href')); if(el) map[a.getAttribute('href').slice(1)]=a; });
+  function setActive(id){ links.forEach(function(a){ a.classList.toggle('is-active', a===map[id]); }); }
+  var targets=Object.keys(map).map(function(id){ return document.getElementById(id); });
+  function update(){
+    var line=window.innerHeight*0.35, cur=targets[0];
+    targets.forEach(function(el){ if(el.getBoundingClientRect().top<=line) cur=el; });
+    if(cur) setActive(cur.id);
+  }
+  window.addEventListener('scroll',update,{passive:true}); window.addEventListener('resize',update); update();
+})();
+</script>
 </body>
 </html>
